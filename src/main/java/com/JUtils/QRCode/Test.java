@@ -13,9 +13,8 @@ import java.io.IOException;
 public class Test {
 
     public static void main(String[] args) {
-        BitMatrix bitMatrix=MatrixToImageWriterEx.createQRCode("www.baidu.com",400,400);
+        BitMatrix bitMatrix=MatrixToImageWriterEx.createQRCode("https://www.baidu.com/",400,400);
         try {
-            int a=0;
             MatrixToImageWriterEx.writeToFile(bitMatrix,"jpg","/Users/thejoyrun/Documents/picture/bc.jpg","/Users/thejoyrun/Documents/picture/3.jpg");
         } catch (IOException e) {
             e.printStackTrace();
