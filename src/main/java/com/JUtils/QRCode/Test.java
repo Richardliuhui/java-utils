@@ -17,6 +17,7 @@ public class Test {
         try {
             int a=0;
             MatrixToImageWriterEx.writeToFile(bitMatrix,"jpg","/Users/thejoyrun/Documents/picture/bc.jpg","/Users/thejoyrun/Documents/picture/3.jpg");
+            CodeParse.parseCode("/Users/thejoyrun/Documents/picture/bc.jpg");
         } catch (IOException e) {
             e.printStackTrace();
         }
