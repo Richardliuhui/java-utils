@@ -1,5 +1,9 @@
 package com.JUtils.excel;
 
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.ClientAnchor;
+
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.io.File;
@@ -10,26 +14,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFPatriarch;
-import org.apache.poi.hssf.usermodel.HSSFRichTextString;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
 
 /**
  * Excel 生成通用类，为了兼容，所有 Excel 统一生成 Excel2003 即：xx.xls
@@ -89,8 +78,8 @@ public class ExcelExportHelper {
 	/**
 	 * @param datePatter 
 	 * 					指定时间格式
-	 * @param imageWidth 
-	 * 					指定图片的宽度
+	 * @param
+	 *
 	 * @param imageHeight 
 	 * 					指定图片的高度
 	 */
@@ -345,7 +334,7 @@ public class ExcelExportHelper {
 	 */
 	public List<HSSFWorkbook> exportExcelForBigData(String[] header,List<Object> excelList,String sheetTitle,
 			String flag){
-		List<HSSFWorkbook> list = new ArrayList<>();    //创建表数据结果集
+		List<HSSFWorkbook> list = new ArrayList<HSSFWorkbook>();    //创建表数据结果集
 
 		//判断需要生成几个Excel
 		int num  = excelList.size() % maxRowCount == 0 ? excelList.size() / maxRowCount : excelList.size() / maxRowCount + 1;
@@ -402,7 +391,7 @@ public class ExcelExportHelper {
 	 */
 	public List<HSSFWorkbook> exportExcelForBigData(String[] header,String[] properties,
 			List<Object> excelList,String sheetTitle, String flag){
-		List<HSSFWorkbook> list = new ArrayList<>();    //创建表数据结果集
+		List<HSSFWorkbook> list = new ArrayList<HSSFWorkbook>();    //创建表数据结果集
 		// 判断需要生成几个Excel
 		int num = excelList.size() % maxRowCount == 0 ? excelList.size() / maxRowCount : excelList.size() / maxRowCount + 1;
 
@@ -874,7 +863,7 @@ public class ExcelExportHelper {
 			row.setHeightInPoints((short)(IMAGE_HEIGHT * 10));
 			sheet.setColumnWidth(i, IMAGE_WIDTH * 256);
 		    HSSFClientAnchor anchor = new HSSFClientAnchor(0, 0, 1023, 255,(short) i, index, (short) i, index);   
-	        anchor.setAnchorType(3);   
+	        anchor.setAnchorType(ClientAnchor.AnchorType.DONT_MOVE_DO_RESIZE);
 	        //插入图片  
 	        byte[] bsValue = (byte[]) value;
 	        patriarch.createPicture(anchor, book.addPicture(bsValue, HSSFWorkbook.PICTURE_TYPE_JPEG)); 
@@ -931,7 +920,6 @@ public class ExcelExportHelper {
 	 * @author chenssy 
 	 * @date 2014年6月17日 下午7:35:52
 	 * @param textValue 
-	 * @param 指定列
 	 * @return
 	 * @version 1.0
 	 */
@@ -983,7 +971,6 @@ public class ExcelExportHelper {
 	 * 将生成的Excel打包并保存到指定路径下
 	 * @author chenssy 
 	 * @date 2014年6月19日 下午6:18:09
-	 * @param book 
 	 * 			生成的Excel HSSFWorkbook list集合
 	 * @param filePath 
 	 * 			保存路劲

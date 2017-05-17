@@ -1,20 +1,19 @@
 package com.JUtils.QRCode;
 
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Hashtable;
-
-import javax.imageio.ImageIO;
-
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Hashtable;
 
 public class MatrixToImageWriterEx {
 
@@ -77,6 +76,10 @@ public class MatrixToImageWriterEx {
 		BufferedImage img = ImageIO.read(new File(imagePath));
 		MatrixToImageWriterEx.overlapImage(img, format, imagePath, logoPath, logoConfig);
 	}
+	public static void writeToFile(BitMatrix matrix, String format, String imagePath) throws IOException {
+		File outputFile = new File(imagePath);
+		MatrixToImageWriter.writeToFile(matrix, format, outputFile,new MatrixToImageConfig());
+	}
 
 	/**
 	 * 将照片logo添加到二维码中间
@@ -136,6 +139,19 @@ public class MatrixToImageWriterEx {
 		
 		//输出
 		ImageIO.write(image, formate, out);
+	}
+
+	/***
+	 * 生成二维码,不带logo
+	 * @param matrix 要写入的二维码
+	 * @param formate
+	 * @throws IOException
+     */
+	public static void overlapImage(BitMatrix matrix,String formate,String imagePath) throws IOException{
+		////将matrix转换为bufferImage
+		BufferedImage image = MatrixToImageWriter.toBufferedImage(matrix);
+		//输出
+		ImageIO.write(image, formate, new File(imagePath));
 	}
 	
 	/**
