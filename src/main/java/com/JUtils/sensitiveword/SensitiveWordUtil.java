@@ -1,4 +1,4 @@
-package com.JUtils.sensitiveword;
+package com.jutils.sensitiveword;
 
 import com.roklenarcic.util.strings.AhoCorasickSet;
 import com.roklenarcic.util.strings.SetMatchListener;
@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 敏感词检验工具，基于AC自动机算法<br>
+ * 算法实现库：https://github.com/RokLenarcic/AhoCorasick
  * @author liuhui
  * @date 2017-05-17 下午4:06
  */

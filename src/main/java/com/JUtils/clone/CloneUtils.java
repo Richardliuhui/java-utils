@@ -1,4 +1,4 @@
-package com.JUtils.clone;
+package com.jutils.clone;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

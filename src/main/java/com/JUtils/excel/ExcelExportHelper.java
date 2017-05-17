@@ -1,4 +1,4 @@
-package com.JUtils.excel;
+package com.jutils.excel;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;

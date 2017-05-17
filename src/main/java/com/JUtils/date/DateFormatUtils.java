@@ -1,4 +1,4 @@
-package com.JUtils.date;
+package com.jutils.date;
 
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;

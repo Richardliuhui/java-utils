@@ -1,4 +1,4 @@
-package com.JUtils.file;
+package com.jutils.file;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

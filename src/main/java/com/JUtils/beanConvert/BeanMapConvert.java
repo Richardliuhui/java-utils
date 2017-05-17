@@ -1,4 +1,4 @@
-package com.JUtils.beanConvert;
+package com.jutils.beanConvert;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

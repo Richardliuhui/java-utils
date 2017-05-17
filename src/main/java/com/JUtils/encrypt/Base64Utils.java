@@ -1,6 +1,4 @@
-package com.JUtils.encrypt;
-
-import java.io.UnsupportedEncodingException;
+package com.jutils.encrypt;
 
 /**
  * BASE64加解密工具类

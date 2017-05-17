@@ -1,4 +1,4 @@
-package com.JUtils.sensitiveword;
+package com.jutils.sensitiveword;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.JUtils.file;
+package com.jutils.file;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,8 +9,8 @@ import java.io.OutputStream;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
-import com.JUtils.date.DateUtils;
-import com.JUtils.math.RandomUtils;
+import com.jutils.date.DateUtils;
+import com.jutils.math.RandomUtils;
 
 /**
  * @desc:文件工具类

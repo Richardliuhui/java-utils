@@ -1,4 +1,4 @@
-package com.JUtils.date;
+package com.jutils.date;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package com.JUtils.word;
+package com.jutils.word;
 
 import java.util.Vector;
 

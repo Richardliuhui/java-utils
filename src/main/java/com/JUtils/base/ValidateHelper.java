@@ -1,4 +1,4 @@
-package com.JUtils.base;
+package com.jutils.base;
 
 import java.lang.reflect.Array;
 import java.util.Collection;

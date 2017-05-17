@@ -1,4 +1,4 @@
-package com.JUtils.encrypt;
+package com.jutils.encrypt;
 
 
 /**

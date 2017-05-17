@@ -1,4 +1,4 @@
-package com.JUtils.base;
+package com.jutils.base;
 
 import java.util.regex.Pattern;
 

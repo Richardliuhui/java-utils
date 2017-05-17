@@ -1,4 +1,4 @@
-package com.JUtils.math;
+package com.jutils.math;
 
 import java.util.Random;
 

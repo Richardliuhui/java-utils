@@ -1,4 +1,4 @@
-package com.JUtils.image;
+package com.jutils.image;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
