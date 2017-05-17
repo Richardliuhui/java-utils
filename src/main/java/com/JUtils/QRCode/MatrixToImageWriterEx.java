@@ -76,6 +76,14 @@ public class MatrixToImageWriterEx {
 		BufferedImage img = ImageIO.read(new File(imagePath));
 		MatrixToImageWriterEx.overlapImage(img, format, imagePath, logoPath, logoConfig);
 	}
+
+	/***
+	 * 只生成二维码,不带logo
+	 * @param matrix
+	 * @param format
+	 * @param imagePath
+	 * @throws IOException
+     */
 	public static void writeToFile(BitMatrix matrix, String format, String imagePath) throws IOException {
 		File outputFile = new File(imagePath);
 		MatrixToImageWriter.writeToFile(matrix, format, outputFile,new MatrixToImageConfig());
