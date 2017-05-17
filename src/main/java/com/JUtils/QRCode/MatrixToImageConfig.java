@@ -1,4 +1,4 @@
-package com.jutils.QRCode;
+package com.jutils.qrcode;
 
 import java.awt.image.BufferedImage;
 
